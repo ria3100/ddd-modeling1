@@ -9,7 +9,7 @@ export class EditTagAppService {
   }
   public async do(previousContent: string, newContent: string) {
     const existingTag = this.tagRepo.findTagByContent(previousContent)
-    const updatedTag = new RootTag(newContent, existingTag.postIds)
+    const updatedTag = new RootTag(newContent, existingTag.postIds) // fixme: これだとtagのidが変わっちゃうので、idはappServiceで指定できるようにする
     await this.tagRepo.save(updatedTag)
   }
 }
