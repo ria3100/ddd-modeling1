@@ -23,6 +23,3 @@ export class RootPost {
     if (this.tagIds.length > 5) throw new Error('一つのpost紐づけられるタグは5つまでです！')
   }
 }
-
-
-// fixme: tagに紐づけられるpostは5つまで、ってルールはどこに作るのだろうか？
